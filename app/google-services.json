@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "461691981181",
+    "project_id": "parking-c8fce",
+    "storage_bucket": "parking-c8fce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461691981181:android:b4d4459dababce93fed014",
+        "android_client_info": {
+          "package_name": "com.lucasgugliuzza.parking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461691981181-gl1855v1q461rmiqkplercjb80kp11ns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lucasgugliuzza.parking",
+            "certificate_hash": "aa46abbc549fe351aba08e23ecca9ec0a242dcf4"
+          }
+        },
+        {
+          "client_id": "461691981181-1futut6jarj9cqq3hq30suvd2t30liqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBouEA4M5GcW_893kXMlWy_JGkzLBrk2bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461691981181-1futut6jarj9cqq3hq30suvd2t30liqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
