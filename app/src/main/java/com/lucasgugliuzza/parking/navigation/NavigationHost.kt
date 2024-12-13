@@ -14,7 +14,10 @@ fun NavigationHost(
 ){
     NavHost(navController = navHostController, startDestination = startDestination.route){
         composable(NavigationRoute.LoginScreen.route){
-            LoginScreen()
+            LoginScreen(onLoggedIn = {
+                navHostController.popBackStack()
+                navHostController.navigate(NavigationRoute.HomeScreen.route)
+            })
         }
 
         composable(NavigationRoute.HomeScreen.route){
