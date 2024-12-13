@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.lucasgugliuzza.navigation.NavigationHost
-import com.lucasgugliuzza.navigation.NavigationRoute
+import com.lucasgugliuzza.parking.navigation.NavigationHost
+import com.lucasgugliuzza.parking.navigation.NavigationRoute
 import com.lucasgugliuzza.parking.ui.theme.ParkingTheme
 import dagger.hilt.android.AndroidEntryPoint
 
