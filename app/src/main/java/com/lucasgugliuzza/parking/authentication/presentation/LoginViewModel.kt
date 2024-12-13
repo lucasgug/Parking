@@ -6,9 +6,15 @@ import androidx.compose.runtime.setValue
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.lucasgugliuzza.parking.authentication.domain.AuthenticationRepository
+import kotlinx.coroutines.launch
 
 @HiltViewModel
-class LoginViewModel @Inject constructor() : ViewModel() {
+class LoginViewModel @Inject constructor(
+    private val authenticationRepository: AuthenticationRepository
+) : ViewModel() {
     var state by mutableStateOf(LoginState())
         private set
 
@@ -16,7 +22,9 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         when (event) {
             is LoginEvent.LogIn -> {
 
-                // TODO
+                viewModelScope.launch {
+                    authenticationRepository.oneTapLogin()
+                }
             }
         }
     }
