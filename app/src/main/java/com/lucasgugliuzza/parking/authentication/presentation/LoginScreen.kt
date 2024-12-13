@@ -34,8 +34,8 @@ fun LoginScreen(
             onLoggedIn()
         }
     }
-    
-    
+
+
     Scaffold(modifier = Modifier.fillMaxSize()) {
         Box(
             modifier = Modifier
@@ -62,3 +62,4 @@ fun LoginScreen(
         }
     }
 }
+
