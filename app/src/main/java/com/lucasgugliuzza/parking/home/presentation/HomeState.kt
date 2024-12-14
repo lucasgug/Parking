@@ -1,12 +1,13 @@
 package com.lucasgugliuzza.parking.home.presentation
 
-import android.location.Location
+import com.lucasgugliuzza.parking.home.domain.model.Location
+
 
 data class HomeState(
     val isSearching : CarStatus = CarStatus.NO_PARKED_CAR,
     val currentLocation : Location? = null,
 
-)
+    )
 
 enum class CarStatus {
     NO_PARKED_CAR,
