@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.lucasgugliuzza.parking.home.presentation.components.HomeMap
 
 
 @Composable
@@ -21,7 +22,7 @@ fun HomeScreen(
                 .fillMaxSize()
                 .padding(it)
         ) {
-            Text(text = "Estas en la Home")
+            HomeMap(currentLocation = null, carLocation = null , modifier = Modifier.fillMaxSize())
         }
     }
 }
