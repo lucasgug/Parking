@@ -4,7 +4,7 @@ import com.lucasgugliuzza.parking.home.domain.model.Location
 
 
 data class HomeState(
-    val isSearching : CarStatus = CarStatus.NO_PARKED_CAR,
+    val carStatus : CarStatus = CarStatus.NO_PARKED_CAR,
     val currentLocation : Location? = null,
 
     )
