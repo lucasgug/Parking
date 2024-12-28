@@ -14,10 +14,8 @@ import kotlinx.coroutines.tasks.await
 import java.security.MessageDigest
 import java.util.UUID
 
-class FirebaseAuthenticationRepository(
-    private val context: Context
-) : AuthenticationRepository {
-    override suspend fun oneTapLogin(): Result<Unit> {
+class FirebaseAuthenticationRepository() : AuthenticationRepository {
+    override suspend fun oneTapLogin(context: Context): Result<Unit> {
         val credentialManager = CredentialManager.create(context)
         val nonce = UUID.randomUUID().toString().toByteArray()
         val digest = MessageDigest.getInstance("SHA-256").digest(nonce)
