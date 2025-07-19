@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
@@ -13,6 +16,16 @@ android {
     namespace = "com.lucasgugliuzza.parking"
     compileSdk = 35
 
+    val localPropertiesFile = rootProject.file("local.properties")
+    val localProperties = Properties().apply {
+        load(FileInputStream(localPropertiesFile))
+    }
+
+    val googleMapsApiKey = localProperties.getProperty("MAPS_API_KEY")
+        ?: throw IllegalArgumentException("MAPS_API_KEY not found in local.properties")
+    val googleWebClientId = localProperties.getProperty("GOOGLE_WEBCLIENT_ID")
+        ?: throw IllegalArgumentException("GOOGLE_WEBCLIENT_ID not found in local.properties")
+
     defaultConfig {
         applicationId = "com.lucasgugliuzza.parking"
         minSdk = 24
@@ -21,6 +34,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "MAPS_API_KEY", "\"$googleMapsApiKey\"")
+        buildConfigField("String", "GOOGLE_WEBCLIENT_ID", "\"$googleWebClientId\"")
     }
 
     buildTypes {
@@ -41,6 +57,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
