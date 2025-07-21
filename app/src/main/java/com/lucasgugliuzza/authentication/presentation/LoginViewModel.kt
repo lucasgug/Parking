@@ -3,19 +3,26 @@ package com.lucasgugliuzza.authentication.presentation
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.lucasgugliuzza.authentication.domain.AuthenticationRepository
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-@HiltViewModel
-class LoginViewModel @Inject constructor() : ViewModel() {
+
+@dagger.hilt.android.lifecycle.HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val authenticationRepository: AuthenticationRepository
+) : ViewModel() {
     var state by mutableStateOf(LoginState())
         private set
 
     fun onEvent(event: LoginEvent) {
         when (event) {
             is LoginEvent.LogIn -> {
-              println("Logging in with Google...")
+              viewModelScope.launch {
+                  authenticationRepository.oneTapLogin()
+              }
             }
         }
     }
